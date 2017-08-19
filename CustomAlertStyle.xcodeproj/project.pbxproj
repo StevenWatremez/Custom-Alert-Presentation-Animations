@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D2204321F475C86007FEAA3 /* FadeUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2204311F475C86007FEAA3 /* FadeUpAnimator.swift */; };
+		6D2204341F475C9C007FEAA3 /* FadeDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2204331F475C9C007FEAA3 /* FadeDownAnimator.swift */; };
 		6D67EC561F46E81900F76A0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC551F46E81800F76A0A /* AppDelegate.swift */; };
 		6D67EC581F46E81900F76A0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC571F46E81900F76A0A /* ViewController.swift */; };
 		6D67EC5B1F46E81900F76A0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D67EC591F46E81900F76A0A /* Main.storyboard */; };
 		6D67EC5D1F46E81900F76A0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D67EC5C1F46E81900F76A0A /* Assets.xcassets */; };
 		6D67EC601F46E81900F76A0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D67EC5E1F46E81900F76A0A /* LaunchScreen.storyboard */; };
+		6D67EC681F46EBDF00F76A0A /* SlideUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC671F46EBDF00F76A0A /* SlideUpAnimator.swift */; };
+		6D67EC6C1F46ED5B00F76A0A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC6B1F46ED5B00F76A0A /* AlertViewController.swift */; };
+		6D67EC6E1F46FD7200F76A0A /* AlertPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC6D1F46FD7200F76A0A /* AlertPresentationManager.swift */; };
+		6D67EC701F471B5A00F76A0A /* SlideDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC6F1F471B5A00F76A0A /* SlideDownAnimator.swift */; };
+		6D67EC711F471C5A00F76A0A /* CustomAlertPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D67EC691F46EC4E00F76A0A /* CustomAlertPresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D2204311F475C86007FEAA3 /* FadeUpAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeUpAnimator.swift; sourceTree = "<group>"; };
+		6D2204331F475C9C007FEAA3 /* FadeDownAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeDownAnimator.swift; sourceTree = "<group>"; };
 		6D67EC521F46E81800F76A0A /* CustomAlertStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomAlertStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D67EC551F46E81800F76A0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D67EC571F46E81900F76A0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,11 @@
 		6D67EC5C1F46E81900F76A0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D67EC5F1F46E81900F76A0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D67EC611F46E81900F76A0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D67EC671F46EBDF00F76A0A /* SlideUpAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpAnimator.swift; sourceTree = "<group>"; };
+		6D67EC691F46EC4E00F76A0A /* CustomAlertPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertPresentation.swift; sourceTree = "<group>"; };
+		6D67EC6B1F46ED5B00F76A0A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6D67EC6D1F46FD7200F76A0A /* AlertPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationManager.swift; sourceTree = "<group>"; };
+		6D67EC6F1F471B5A00F76A0A /* SlideDownAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideDownAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +70,14 @@
 			children = (
 				6D67EC551F46E81800F76A0A /* AppDelegate.swift */,
 				6D67EC571F46E81900F76A0A /* ViewController.swift */,
+				6D67EC6B1F46ED5B00F76A0A /* AlertViewController.swift */,
 				6D67EC591F46E81900F76A0A /* Main.storyboard */,
+				6D2204311F475C86007FEAA3 /* FadeUpAnimator.swift */,
+				6D2204331F475C9C007FEAA3 /* FadeDownAnimator.swift */,
+				6D67EC671F46EBDF00F76A0A /* SlideUpAnimator.swift */,
+				6D67EC6F1F471B5A00F76A0A /* SlideDownAnimator.swift */,
+				6D67EC691F46EC4E00F76A0A /* CustomAlertPresentation.swift */,
+				6D67EC6D1F46FD7200F76A0A /* AlertPresentationManager.swift */,
 				6D67EC5C1F46E81900F76A0A /* Assets.xcassets */,
 				6D67EC5E1F46E81900F76A0A /* LaunchScreen.storyboard */,
 				6D67EC611F46E81900F76A0A /* Info.plist */,
@@ -135,8 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D67EC711F471C5A00F76A0A /* CustomAlertPresentation.swift in Sources */,
 				6D67EC581F46E81900F76A0A /* ViewController.swift in Sources */,
+				6D67EC6E1F46FD7200F76A0A /* AlertPresentationManager.swift in Sources */,
+				6D2204341F475C9C007FEAA3 /* FadeDownAnimator.swift in Sources */,
 				6D67EC561F46E81900F76A0A /* AppDelegate.swift in Sources */,
+				6D67EC6C1F46ED5B00F76A0A /* AlertViewController.swift in Sources */,
+				6D67EC681F46EBDF00F76A0A /* SlideUpAnimator.swift in Sources */,
+				6D67EC701F471B5A00F76A0A /* SlideDownAnimator.swift in Sources */,
+				6D2204321F475C86007FEAA3 /* FadeUpAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

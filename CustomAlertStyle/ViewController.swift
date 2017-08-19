@@ -9,17 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  
+  // Need to be retain because of transitioningDelegate is weak reference
+  private let transition = AlertPresentationManager()
+  
+  @IBAction private func didPressFadeAlert(_ sender: UIButton) {
+    self.launchAlert(style: .fade)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  @IBAction private func didPressSlideUpAlert(_ sender: UIButton) {
+    self.launchAlert(style: .slideUp)
   }
-
-
+  
+  private func launchAlert(style: AlertTransitioningStyle) {
+    if let alertVC = storyboard?.instantiateViewController(withIdentifier: "AlertViewController") as? AlertViewController {
+      alertVC.modalPresentationStyle = .custom
+      self.transition.type = style
+      alertVC.transitioningDelegate = self.transition
+      self.present(alertVC, animated: true, completion: nil)
+    }
+  }
 }
-
