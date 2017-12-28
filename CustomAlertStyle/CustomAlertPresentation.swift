@@ -19,8 +19,6 @@ class CustomAlertPresentation: UIPresentationController {
   
   func setupDimmingView() {
     self.dimmingView = UIView(frame: presentingViewController.view.bounds)
-    self.dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-    
     let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dimmingViewTapped(tapRecognizer:)))
     self.dimmingView.addGestureRecognizer(tapRecognizer)
   }
@@ -33,21 +31,9 @@ class CustomAlertPresentation: UIPresentationController {
     guard let containerView = self.containerView else {
       return
     }
-    self.dimmingView.frame = containerView.bounds
-    self.dimmingView.alpha = 0.0
-    
     containerView.insertSubview(self.dimmingView, at: 0)
-    UIViewPropertyAnimator(duration: 0, curve: .linear) {
-      self.dimmingView.alpha = 1.0
-      }.startAnimation()
   }
-  
-  override func dismissalTransitionWillBegin() {
-    UIViewPropertyAnimator(duration: 0, curve: .linear) {
-      self.dimmingView.alpha = 0.0
-      }.startAnimation()
-  }
-  
+    
   override func containerViewWillLayoutSubviews() {
     guard let containerView = containerView else {
       return

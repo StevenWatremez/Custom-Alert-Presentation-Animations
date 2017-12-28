@@ -16,6 +16,12 @@ enum AlertTransitioningStyle {
 enum AlertAnimationConstants {
   static let scale: CGFloat = 0.1
   static let translate: CGFloat = UIScreen.main.bounds.height
+  static let dimmingViewRestorationId: String = "dimmingView"
+  static let cornerRadius: CGFloat = 10.0
+  static let fadeUpDuration: TimeInterval = 0.5
+  static let fadeDownDuration: TimeInterval = 0.1
+  static let slideUpDuration: TimeInterval = 0.5
+  static let slideDownDuration: TimeInterval = 0.3
 }
 
 class AlertPresentationManager: NSObject, UIViewControllerTransitioningDelegate {
