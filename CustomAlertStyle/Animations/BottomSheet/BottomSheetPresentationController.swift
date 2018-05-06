@@ -3,12 +3,12 @@
 //  CustomAlertStyle
 //
 //  Created by Steven_WATREMEZ on 18/08/2017.
-//  Copyright © 2017 Niji. All rights reserved.
+//  Copyright © 2017 All rights reserved.
 //
 
 import UIKit
 
-class CustomAlertPresentation: UIPresentationController {
+class BottomSheetPresentationController: UIPresentationController {
   
   var dimmingView: UIView!
   
@@ -21,6 +21,7 @@ class CustomAlertPresentation: UIPresentationController {
     self.dimmingView = UIView(frame: presentingViewController.view.bounds)
     let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dimmingViewTapped(tapRecognizer:)))
     self.dimmingView.addGestureRecognizer(tapRecognizer)
+    self.dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
   }
   
   @objc func dimmingViewTapped(tapRecognizer: UITapGestureRecognizer) {
@@ -31,9 +32,21 @@ class CustomAlertPresentation: UIPresentationController {
     guard let containerView = self.containerView else {
       return
     }
-    containerView.insertSubview(self.dimmingView, at: 0)
-  }
+    self.dimmingView.frame = containerView.bounds
+    self.dimmingView.alpha = 0.0
     
+    containerView.insertSubview(self.dimmingView, at: 0)
+    UIViewPropertyAnimator(duration: 0, curve: .linear) {
+      self.dimmingView.alpha = 1.0
+    }.startAnimation()
+  }
+  
+  override func dismissalTransitionWillBegin() {
+    UIViewPropertyAnimator(duration: 0, curve: .easeOut) {
+      self.dimmingView.alpha = 0.0
+    }.startAnimation()
+  }
+  
   override func containerViewWillLayoutSubviews() {
     guard let containerView = containerView else {
       return
@@ -43,7 +56,7 @@ class CustomAlertPresentation: UIPresentationController {
   }
   
   override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-    return self.presentedViewController.preferredContentSize
+    return CGSize(width: UIScreen.main.bounds.width, height: self.presentedViewController.preferredContentSize.height)
   }
   
   override var frameOfPresentedViewInContainerView: CGRect {
@@ -53,9 +66,10 @@ class CustomAlertPresentation: UIPresentationController {
       let containerBounds = containerView?.bounds else {
         return presentedViewFrame
     }
-    presentedViewFrame.size = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
-    presentedViewFrame.origin.x = (presentedView.bounds.width - self.presentedViewController.preferredContentSize.width) / 2
-    presentedViewFrame.origin.y = (presentedView.bounds.height - self.presentedViewController.preferredContentSize.height) / 2
+    let presentedViewFrameSize = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
+    presentedViewFrame.size = presentedViewFrameSize
+    presentedViewFrame.origin.x = (presentedView.bounds.width - presentedViewFrameSize.width) / 2
+    presentedViewFrame.origin.y = (presentedView.bounds.height - presentedViewFrameSize.height)
     
     return presentedViewFrame
   }

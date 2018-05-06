@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rOq-6f-dy8">
-                                <rect key="frame" x="50" y="298.5" width="275" height="90"/>
+                                <rect key="frame" x="50" y="268.5" width="275" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQS-b1-vJp">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
@@ -34,13 +34,24 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZT-zP-Kv8">
                                         <rect key="frame" x="0.0" y="60" width="275" height="30"/>
-                                        <color key="backgroundColor" name="purpleMainColor"/>
+                                        <color key="backgroundColor" red="0.67100000380000002" green="0.41999998690000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                                         <state key="normal" title="Slide Up Alert">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="didPressSlideUpAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxm-TM-1Lf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sM5-eu-DZ4">
+                                        <rect key="frame" x="0.0" y="120" width="275" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.86274509799999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                        <state key="normal" title="Slide Up Bottom Sheet">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressSlideUpBottomSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7F-e7-HYt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,6 +78,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="71.514242878560722"/>
+        </scene>
+        <!--Bottom Sheet View Controller-->
+        <scene sceneID="vDG-0m-Tar">
+            <objects>
+                <viewController restorationIdentifier="BottomSheetViewController" storyboardIdentifier="BottomSheetViewController" id="Gjp-DQ-x5Z" customClass="BottomSheetViewController" customModule="CustomAlertStyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FZA-SU-Op1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgH-4G-Mz2">
+                                <rect key="frame" x="87.5" y="395" width="200" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.86274509799999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LqX-Pi-5Ye"/>
+                                    <constraint firstAttribute="height" constant="35" id="ZaG-kE-b3H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="11"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSend:" destination="Gjp-DQ-x5Z" eventType="touchUpInside" id="722-I0-T1W"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9og-5U-sF4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTOM SHEET TITLE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qiy-bp-Ivs">
+                                        <rect key="frame" x="20" y="20" width="272" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-Of-McT">
+                                        <rect key="frame" x="333" y="20" width="22" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="cancel_light">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressClose:" destination="Gjp-DQ-x5Z" eventType="touchUpInside" id="rEQ-ou-g3M"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.86274509799999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aZL-Of-McT" firstAttribute="top" secondItem="9og-5U-sF4" secondAttribute="top" constant="20" id="BLN-IV-ktq"/>
+                                    <constraint firstAttribute="trailing" secondItem="aZL-Of-McT" secondAttribute="trailing" constant="20" id="Ha4-gq-BjZ"/>
+                                    <constraint firstItem="aZL-Of-McT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qiy-bp-Ivs" secondAttribute="trailing" constant="20" id="R16-mZ-R4M"/>
+                                    <constraint firstAttribute="bottom" secondItem="aZL-Of-McT" secondAttribute="bottom" constant="20" id="VaX-sb-Azc"/>
+                                    <constraint firstItem="Qiy-bp-Ivs" firstAttribute="top" secondItem="9og-5U-sF4" secondAttribute="top" constant="20" id="Vwp-tU-OCS"/>
+                                    <constraint firstItem="Qiy-bp-Ivs" firstAttribute="leading" secondItem="9og-5U-sF4" secondAttribute="leading" constant="20" id="b6R-at-47P"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qiy-bp-Ivs" secondAttribute="bottom" constant="20" id="veB-7v-FUW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9og-5U-sF4" firstAttribute="leading" secondItem="FZA-SU-Op1" secondAttribute="leading" id="4oH-tR-cuz"/>
+                            <constraint firstItem="sgH-4G-Mz2" firstAttribute="centerX" secondItem="FZA-SU-Op1" secondAttribute="centerX" id="KaX-Mh-uTH"/>
+                            <constraint firstItem="hcf-ti-nzP" firstAttribute="bottom" secondItem="sgH-4G-Mz2" secondAttribute="bottom" constant="20" id="WgL-hy-ac6"/>
+                            <constraint firstItem="9og-5U-sF4" firstAttribute="top" secondItem="FZA-SU-Op1" secondAttribute="top" id="idj-tK-XD4"/>
+                            <constraint firstItem="9og-5U-sF4" firstAttribute="trailing" secondItem="FZA-SU-Op1" secondAttribute="trailing" id="yrg-bb-LsJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hcf-ti-nzP"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="450"/>
+                    <size key="freeformSize" width="375" height="450"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFV-Xf-ORw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="168.21589205397302"/>
         </scene>
         <!--Alert View Controller-->
         <scene sceneID="3wr-hO-Mse">
@@ -107,18 +192,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALERT TITLE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD0-LU-J5J">
                                 <rect key="frame" x="20" y="20" width="260" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbG-RX-BTI">
                                 <rect key="frame" x="20" y="64" width="260" height="163"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="orange"/>
+                        <color key="backgroundColor" red="0.67100000380000002" green="0.41999998690000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="A9i-Sg-qEi" firstAttribute="top" secondItem="TbG-RX-BTI" secondAttribute="bottom" constant="20" id="6Fg-VH-REf"/>
                             <constraint firstItem="A9i-Sg-qEi" firstAttribute="bottom" secondItem="xc4-11-EWq" secondAttribute="bottom" id="IK7-5j-dNq"/>
@@ -140,15 +225,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5s-qp-3nL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="542"/>
+            <point key="canvasLocation" x="1320" y="237"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="orange">
-            <color red="0.90600001811981201" green="0.45500001311302185" blue="0.19099999964237213" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="purpleMainColor">
-            <color red="0.67100000380000002" green="0.41999998690000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="cancel_light" width="22" height="22"/>
     </resources>
 </document>

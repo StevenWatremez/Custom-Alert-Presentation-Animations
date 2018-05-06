@@ -3,7 +3,7 @@
 //  CustomAlertStyle
 //
 //  Created by Steven_WATREMEZ on 18/08/2017.
-//  Copyright © 2017 Niji. All rights reserved.
+//  Copyright © 2017 All rights reserved.
 //
 
 import UIKit

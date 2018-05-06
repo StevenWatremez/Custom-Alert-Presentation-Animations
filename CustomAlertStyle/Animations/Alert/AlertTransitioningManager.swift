@@ -3,7 +3,7 @@
 //  CustomAlertStyle
 //
 //  Created by Steven_WATREMEZ on 18/08/2017.
-//  Copyright © 2017 Niji. All rights reserved.
+//  Copyright © 2017 All rights reserved.
 //
 
 import UIKit
@@ -24,12 +24,12 @@ enum AlertAnimationConstants {
   static let slideDownDuration: TimeInterval = 0.3
 }
 
-class AlertPresentationManager: NSObject, UIViewControllerTransitioningDelegate {
+class AlertTransitioningManager: NSObject, UIViewControllerTransitioningDelegate {
   
   var type: AlertTransitioningStyle = .fade
   
   func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-    let presentationController = CustomAlertPresentation(presentedViewController: presented, presenting: source)
+    let presentationController = AlertPresentationController(presentedViewController: presented, presenting: source)
     return presentationController
   }
   
