@@ -16,7 +16,7 @@ class BottomSheetSlideUpAnimator: NSObject, UIViewControllerAnimatedTransitionin
   
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-    let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+//    let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
     let containerView = transitionContext.containerView
     
     let animationDuration = self.transitionDuration(using: transitionContext)
